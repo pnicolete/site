@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<title> Título da página </title>
+<title> TÃ­tulo da pÃ¡gina - teste </title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
-<p>Uma informação qualquer</p>
+<p>Uma informaÃ§Ã£o qualquer</p>
   <canvas id="glCanvas" width="640" height="480"></canvas>
   <script>
   function main() {
@@ -14,15 +14,15 @@
   // Inicializa o contexto GL
   const gl = canvas.getContext("webgl");
 
-  // Apenas continue se o WebGL estiver disponível e funcionando
+  // Apenas continue se o WebGL estiver disponÃ­vel e funcionando
   if (!gl) {
     alert("Unable to initialize WebGL. Your browser or machine may not support it.");
     return;
   }
 
-  // Define a cor para preto totalmente opaca (sem transparência)
+  // Define a cor para preto totalmente opaca (sem transparÃªncia)
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
-  // Limpa o buffer de cores com uma cor específica
+  // Limpa o buffer de cores com uma cor especÃ­fica
   gl.clear(gl.COLOR_BUFFER_BIT);
 </script>
   
