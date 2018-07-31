@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" 
+	    src="../glMatrix-0.9.5.min.js">
+    </script>
+    <script type="text/javascript" 
+	    src="../jquery-2.1.0.min.js">
+    </script>  
+</head>
+  <body>
+     <canvas id="canvas-webgl" 
+	    width="500px" 
+	    height="500px" 
+	    style="border:none">
+    </canvas>
+
+    <script type="text/javascript">
+      // Iniciar o ambiente quando a página for 
+      // carregada
+		$(function()
+		{
+			iniciaWebGL();
+		});
+
+		function iniciaWebGL()
+		{
+		  var canvas = $('#canvas-webgl')[0];
+		  iniciarGL(canvas); // Definir como um canvas 3D
+		  iniciarShaders();  // Obter e processar os Shaders
+		  iniciarBuffers();  // Enviar o triângulo e quadrado na GPU
+		  iniciarAmbiente(); // Definir background e cor do objeto
+		  desenharCena();    // Usar os itens anteriores e desenhar
+		}
+		
+		function iniciarGL(canvas)
+		{
+		  try
+		  {
+		     gl = canvas.getContext("webgl") || 
+			 canvas.getContext("experimental-webgl");
+		     gl.viewportWidth = canvas.width;
+		     gl.viewportHeight = canvas.height;
+		  }
+		  catch(e){
+		    if(!gl)
+		       alert("Não pode inicializar WebGL, desculpe");
+		  }
+		}
+    </script>
+  </body>
+</html>
